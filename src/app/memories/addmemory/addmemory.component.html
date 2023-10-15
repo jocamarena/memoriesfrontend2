@@ -1,0 +1,25 @@
+<p>addmemory works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <form (ngSubmit)="onSubmitMemory()" #addMemoryForm="ngForm">
+        <div id="user-data">
+          <div class="form-group">
+            <label *ngIf="!title.touched || title.valid" for="title">Title</label>
+            <label *ngIf="title.invalid && title.touched" for="title">Title is required</label>
+            <input type="text" id="title" class="form-control" name="title" #title="ngModel" required ngModel>
+
+
+          </div>
+
+          <div class="form-group">
+            <label for="description">Description</label>
+            <input type="text" id="description" class="form-control" name="description" required ngModel>
+          </div>
+        </div>
+        <button class="btn btn-info" type="reset">Reset</button>
+        <button class="btn btn-success" type="submit" [disabled]="addMemoryForm.invalid">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>

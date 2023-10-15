@@ -1,0 +1,4 @@
+<p>tempconversion works!</p>
+<input type="text" [(ngModel)]="fahrenheit" (ngModelChange)="handleChange($event, 'fahrenheit')">
+<input type="text" [(ngModel)]="celsius" (ngModelChange)="handleChange($event, 'celsius')"><br>
+<output>{{fahrenheit}} degrees Fahrenheit is {{celsius}} degrees Celsius</output>
